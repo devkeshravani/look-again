@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The tablets stayed. Their names didn't. · A case study</title>
+  <meta name="description" content="An information-design exploration of how medicine strips stay readable after separation.">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="data/timeline.js" defer></script>
+  <script src="data/themes.js" defer></script>
+  <script src="data/testing.js" defer></script>
+  <script src="data/reflections.js" defer></script>
+  <script src="data/marquee.js" defer></script>
+  <script src="js/layers.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/sections.js" defer></script>
+  <script src="js/story.js" defer></script>
+  <script src="js/timeline.js" defer></script>
+  <script src="js/chrome.js" defer></script>
+  <script src="js/glassband.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- 1. Glass navbar -->
+  <header class="gnav-wrap">
+    <div class="gnav" id="gnav">
+      <nav class="gnav__bar" aria-label="Case study sections">
+        <a class="gnav__brand" href="#top"><span class="gnav__mark" aria-hidden="true"></span><span data-site-name>Look Again</span></a>
+        <div class="gnav__links-wrap">
+          <span class="gnav__pill" aria-hidden="true"></span>
+          <ul class="gnav__links">
+            <li><a class="gnav__link" href="#glance">Overview</a></li>
+            <li><a class="gnav__link" href="#challenge">Challenge</a></li>
+            <li><a class="gnav__link" href="#found">Findings</a></li>
+            <li><a class="gnav__link" href="#considered">Ideas</a></li>
+            <li><a class="gnav__link" href="#proposing">Proposal</a></li>
+            <li><a class="gnav__link" href="#testing">Testing</a></li>
+            <li><a class="gnav__link" href="#impact">Impact</a></li>
+          </ul>
+        </div>
+        <a class="gnav__cta" href="mailto:sd1752@g.rit.edu" data-contact>Get in touch</a>
+        <button class="gnav__toggle" type="button" aria-expanded="false" aria-controls="gnav-panel" aria-label="Open menu">
+          <span class="gnav__burger" aria-hidden="true"><i></i><i></i><i></i></span>
+        </button>
+      </nav>
+      <nav class="gnav__panel" id="gnav-panel" aria-label="Case study sections (menu)" hidden>
+        <ul>
+          <li><a class="gnav__plink" href="#glance">Overview</a></li>
+          <li><a class="gnav__plink" href="#challenge">Challenge</a></li>
+          <li><a class="gnav__plink" href="#found">Findings</a></li>
+          <li><a class="gnav__plink" href="#considered">Ideas</a></li>
+          <li><a class="gnav__plink" href="#proposing">Proposal</a></li>
+          <li><a class="gnav__plink" href="#testing">Testing</a></li>
+          <li><a class="gnav__plink" href="#impact">Impact</a></li>
+        </ul>
+        <a class="gnav__cta gnav__cta--panel" href="mailto:sd1752@g.rit.edu" data-contact>Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- 2. Hero -->
+    <section class="hero" id="top" aria-labelledby="title">
+      <div class="glassbg" data-glass="hero" data-words-anchor=".hero__words" aria-hidden="true"><canvas></canvas></div>
+      <div class="hero__main">
+        <img class="hero__photo" src="images/HERO-PHOTO-cutout.webp" width="1920" height="1080" fetchpriority="high" decoding="async"
+             alt="Two nameless foil fragments cut from medicine strips, side by side on a white background. One has black marks along its right edge; the other has a red band along its left edge.">
+        <div class="hero__text">
+          <p class="hero__ask">Which one is which?</p>
+          <h1 id="title" data-site-title>The tablets stayed. Their names didn't.</h1>
+          <p class="hero__sub">An information-design exploration of how medicine strips stay readable after separation.</p>
+          <p class="hero__status">Proposal and exploration · Not a finished or tested medical product</p>
+        </div>
+      </div>
+      <div class="hero__words" aria-hidden="true"></div>
+    </section>
+
+    <!-- 3. Metadata + At a glance -->
+    <section class="glance" id="glance" aria-labelledby="glance-h">
+      <div class="glassbg" data-glass="glance" data-words-anchor=".glance__words" aria-hidden="true"><canvas></canvas></div>
+      <div class="glance__body">
+        <h2 id="glance-h">At a glance</h2>
+        <p class="glance__lede">How can a medicine strip keep its identifying information readable when it is separated into smaller pieces?</p>
+        <p>I’m an HCI student, and my grandparents take several medicines. I’ve watched them get confused about which one to take, and they often ask me for the name. When I cut my own strips while packing for the US, I lost the names too.</p>
+        <p>Medicine strips often get cut into smaller pieces. When that happens, the name and other details can end up on a piece you no longer have. This project looks at how a layout could keep the essentials on every piece, without changing how the blister itself works.</p>
+        <h3>Goals</h3>
+        <ul>
+          <li>Keep the medicine name and strength identifiable on every separated unit.</li>
+          <li>Make the expiry date quick to find, and keep it apart from other codes.</li>
+          <li>Explore a second language without crowding a small unit.</li>
+        </ul>
+        <h3>What this project isn’t</h3>
+        <ul>
+          <li>A tested or validated medical product</li>
+          <li>A claim about safety, regulatory compliance or manufacturing readiness</li>
+          <li>A redesign of how blisters seal, protect or open</li>
+        </ul>
+      </div>
+      <div class="glance__words" aria-hidden="true"></div>
+    </section>
+
+    <!-- Animated timeline (data/timeline.js) -->
+    <section class="tl" id="timeline" aria-labelledby="tl-h">
+      <div class="tl__head">
+        <p class="story__kicker">August–November 2026</p>
+        <h2 id="tl-h">How the project unfolded</h2>
+        <p class="tl__summary" id="tl-summary"></p>
+      </div>
+      <noscript><p class="tl__head">Research ran August to October 2026. Prototype testing started at the beginning of November 2026.</p></noscript>
+    </section>
+
+    <!-- 4. Band: The challenge -->
+    <div class="band band--blue" id="challenge"><h2>The challenge</h2></div>
+    <section class="body" aria-label="The challenge">
+      <p>I’m an HCI student, and my grandparents take several medicines. I’ve watched them get confused about which one to take, and they often ask me for the name.</p>
+      <p>Then it happened to me. Before moving to the US, my mom, who is a doctor, gave me medicines for different situations. While packing, I cut some of the strips into smaller pieces.</p>
+      <p>Later I found two pieces from similar-colored strips. Both were from the right side of their original strips, and neither had its medicine name left. I couldn’t tell which was which, and I didn’t know what to do next.</p>
+      <p>I still had the tablets, but I had lost the information I needed to identify them.</p>
+      <p>Below are the two pieces. As you scroll, the photo dims and one area at a time comes back into view. The red dotted line marks where the strip was separated; the thin red outline marks what we’re looking at. You can also use the numbered buttons, or turn on “Show all layers.”</p>
+    </section>
+
+    <!-- 7. Annotated photo: problem scenes -->
+    <section class="scrolly" id="problem-viewer" data-layer-set="problem" data-tabs-label="Strips"
+             data-caption="Photographs of the original strips."
+             data-closing="Neither piece kept its name. That gap, between still having the tablets and no longer knowing what they are, is what this project looks at."
+             aria-label="Annotated photographs of the Cyclopam and Tamodex strips">
+      <noscript>
+        <p>Photographs of the original strips:</p>
+        <img src="images/strip-cyclopam.jpg" alt="Photograph of the original Cyclopam strip.">
+        <img src="images/strip-tamodex.jpg" alt="Photograph of the original Tamodex strip.">
+      </noscript>
+    </section>
+
+    <section class="body" aria-labelledby="exists-h">
+      <h3 id="exists-h">What already exists</h3>
+      <p>Repeating information across a strip isn’t a new idea. Some foils print the name in a repeating pattern, and some unit-dose packs label every single cell (see <a href="#fda-note">the note on existing guidance</a>).</p>
+      <p>What I wanted to understand is what happens when a strip is cut by hand, where the cut doesn’t follow the print, and what a layout could do so that each piece still says what it is.</p>
+    </section>
+
+    <!-- 6. Band: What I found -->
+    <div class="band band--cream" id="found"><h2>What I found</h2></div>
+    <section class="body body--wide" aria-label="What I found">
+      <div style="max-width:840px">
+        <h3 id="studied">How I studied it</h3>
+        <p class="lead-line">I wanted to hear how people actually handle strips before designing anything.</p>
+        <div class="cols cols--facts">
+          <div>
+            <h4>Method</h4>
+            <p>Semi-structured interviews, 30 to 60 minutes each: a guided conversation built on a short list of open-ended questions, with room for spontaneous follow-ups.</p>
+          </div>
+          <div>
+            <h4>Participants and recruitment</h4>
+            <p>15 participants, recruited through a hospital in India where my mother works. 5 were patients, and 10 were caregivers and helpers who support patients.</p>
+          </div>
+        </div>
+        <p class="aside-note"><strong>Limits of the sample.</strong> Everyone was connected to one hospital, so they may be more used to handling medicines than the general public. The findings describe patterns in this group only.</p>
+        <details class="guide" id="interview-guide">
+          <summary>Interview guide <span>(17 questions in 8 areas)</span></summary>
+          <ol class="guide__list" id="guide-list">
+            <li><h5>Medicine management</h5><ol class="guide__qs"><li value="1">Can you tell me a little about how you usually manage medicines at home?</li><li value="2" class="guide__more">How do you usually keep track of the medicines you have?</li></ol></li>
+            <li><h5>Finding the expiry date</h5><ol class="guide__qs"><li value="3">When you pick up a medicine strip, what do you usually look at first?</li><li value="4" class="guide__more">How do you check whether a medicine has expired? Have you ever had trouble finding the expiry date?</li></ol></li>
+            <li><h5>Identifying medicines</h5><ol class="guide__qs"><li value="5">How do you usually recognize a medicine when you need to take it?</li><li value="6" class="guide__more">Have you ever confused two medicines or had trouble telling them apart?</li></ol></li>
+            <li><h5>Reading the packaging</h5><ol class="guide__qs"><li value="7">How easy or difficult is it to read the text on medicine strips?</li><li value="8" class="guide__more">Does the lighting or the shiny packaging ever make it difficult to read?</li></ol></li>
+            <li><h5>Language and understanding</h5><ol class="guide__qs"><li value="9">Is the information on medicine packaging easy for you to understand?</li><li value="10" class="guide__more">Would you prefer the information in another language?</li></ol></li>
+            <li><h5>Information needs</h5><ol class="guide__qs"><li value="11">What do you usually want to know about a medicine apart from its name?</li><li value="12" class="guide__more">Is there anything you find yourself looking up because it's not clear on the packaging?</li><li value="13" class="guide__more">Do you feel the packaging has enough information, or is there too much on it?</li></ol></li>
+            <li><h5>Opening and handling</h5><ol class="guide__qs"><li value="14">Do you find medicine strips easy to open?</li><li value="15" class="guide__more">Have you ever struggled to get a tablet out or accidentally dropped it while removing it?</li></ol></li>
+            <li><h5>Closing questions</h5><ol class="guide__qs"><li value="16">If you could change one thing about medicine packaging, what would it be?</li><li value="17" class="guide__more">Is there anything about using or keeping medicines at home that we haven't talked about but you think is important?</li></ol></li>
+          </ol>
+          <button type="button" class="guide__toggle" id="guide-toggle" aria-controls="guide-list" aria-expanded="false" hidden>Show all 17 questions</button>
+          <p class="guide__note">Follow-up questions varied by participant.</p>
+        </details>
+        <h3>What came up</h3>
+        <p>This is a light summary, not a full analysis. Each card shows one theme. The count is how many participants were quoted on that theme. It doesn’t mean that many people struggled with it.</p>
+      </div>
+      <ul class="cards" aria-label="Interview themes">
+          <li class="icard">
+            <h4>Expiry visibility</h4>
+            <p class="icard__count">6 of the participants quoted here</p>
+            <p class="icard__take">Expiry dates may be present but are not always easy to identify quickly.</p>
+            <blockquote><p>“The date is often printed near a lot of other numbers, so I have to look closely.”</p><cite>P2</cite></blockquote>
+          </li>
+          <li class="icard">
+            <h4>Identifying the medicine</h4>
+            <p class="icard__count">5 of the participants quoted here</p>
+            <p class="icard__take">Brand recognition alone may not be enough to tell medicines apart.</p>
+            <blockquote><p>“I look at the brand name first because it’s usually the biggest thing printed.”</p><cite>P8</cite></blockquote>
+          </li>
+          <li class="icard">
+            <h4>Readability</h4>
+            <p class="icard__count">5 of the participants quoted here</p>
+            <p class="icard__take">Foil reflection, text size, and contrast affect legibility.</p>
+            <blockquote><p>“The printing is small and the background is shiny. Both make it difficult.”</p><cite>P5</cite></blockquote>
+          </li>
+          <li class="icard">
+            <h4>Language</h4>
+            <p class="icard__count">5 of the participants quoted here</p>
+            <p class="icard__take">Familiar language and terminology affect understanding.</p>
+            <blockquote><p>“I would prefer the important information in a language I’m more comfortable with.”</p><cite>P4</cite></blockquote>
+          </li>
+          <li class="icard">
+            <h4>Additional information</h4>
+            <p class="icard__count">5 of the participants quoted here</p>
+            <p class="icard__take">People want more information, but space is limited.</p>
+            <blockquote><p>“Warnings are important, but I don’t want too much information on a small strip.”</p><cite>P10</cite></blockquote>
+          </li>
+          <li class="icard">
+            <h4>Opening and handling</h4>
+            <p class="icard__count">5 of the participants quoted here</p>
+            <p class="icard__take">Opening blister packs and controlling the tablet can be difficult.</p>
+            <blockquote><p>“I have to find the right spot to push. Sometimes the foil doesn’t tear properly.”</p><cite>P11</cite></blockquote>
+          </li>
+      </ul>
+      <div id="theme-stories" class="theme-stories">
+        <p class="story-fallback" id="story-fallback">The interactive analysis story needs JavaScript to run.</p>
+      </div>
+      <div style="max-width:840px">
+        <p class="aside-note"><strong>Not everyone agreed.</strong> One participant said opening is manageable most of the time, though it could be easier for older people.</p>
+        <h3>Scope decisions</h3>
+        <div class="cols">
+          <div>
+            <h4>Included</h4>
+            <ul>
+              <li>Clear medicine name and strength</li>
+              <li>Prominent expiry date</li>
+              <li>Improved contrast and readability</li>
+              <li>Consistent information placement</li>
+              <li>Exploration of bilingual labeling</li>
+              <li>Limited exploration of a pressable form</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Excluded or future work</h4>
+            <ul>
+              <li>Dosage schedules and reminders</li>
+              <li>Before/after-food instructions</li>
+              <li>Detailed warnings and indications</li>
+              <li>Purpose symbols</li>
+              <li>Engineering changes to blister opening mechanisms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Band: What I considered -->
+    <div class="band band--blue" id="considered"><h2>What I considered</h2></div>
+    <section class="body" aria-label="What I considered">
+      <p class="status-label">Set aside, not tested</p>
+      <p>Each of these moved the information somewhere other than the unit itself. This is design reasoning only. None of them were tested.</p>
+      <ol class="ideas" aria-label="Ideas set aside">
+          <li class="idea">
+            <figure>
+              <img src="images/WING-SKETCH.jpg" width="1200" height="900" loading="lazy" alt="Hand sketch of a blister strip, front side, with flat tabs called wings sticking out from its edges. One wing carries a name, strength and expiry date.">
+              <figcaption>Sketch of the wing idea, front side.</figcaption>
+            </figure>
+            <div>
+              <p class="idea__n">Idea 1 · Set aside, not tested</p>
+              <h4>Wing</h4>
+              <p>Flat tabs attached to the edges of the strip, like the small paper flag on a chocolate wrapper but much larger. One tab carries the name, strength and expiry.</p>
+              <p><strong>Why I set it aside:</strong> It adds size beyond the strip's footprint. A tab can fold, tear, or get cut off when the strip is separated, and it changes how the pack fits in cartons and pockets.</p>
+            </div>
+          </li>
+          <li class="idea">
+            <figure>
+              <img src="images/LABEL-SKETCH.jpg" width="1200" height="900" loading="lazy" alt="Hand sketch of the back side of a blister strip, divided into six sections, each with a separate rectangular label. One label shows a name, strength and expiry date.">
+              <figcaption>Sketch of the separate-label idea, back side.</figcaption>
+            </figure>
+            <div>
+              <p class="idea__n">Idea 2 · Set aside, not tested</p>
+              <h4>Separate label</h4>
+              <p>A small label stuck onto the back of each section of the strip, carrying the name, strength and expiry.</p>
+              <p><strong>Why I set it aside:</strong> It is an extra piece that can fall off or end up on the wrong section. It adds a step, and it relies on adhesives that haven't been validated for medicine packaging.</p>
+            </div>
+          </li>
+          <li class="idea">
+            <figure>
+              <img src="images/SCAN-SKETCH.jpg" width="1200" height="900" loading="lazy" alt="Hand sketch of the back side of a blister strip with square scannable codes drawn in some sections, labeled Scan for more info.">
+              <figcaption>Sketch of the scan-for-information idea, back side.</figcaption>
+            </figure>
+            <div>
+              <p class="idea__n">Idea 3 · Set aside, not tested</p>
+              <h4>Scan for information</h4>
+              <p>A square code printed on the back of the strip that links to details about the medicine.</p>
+              <p><strong>Why I set it aside:</strong> It needs a phone, a camera, and often internet access, and scanning gets harder on reflective foil. It doesn't help someone who needs to check a strip quickly.</p>
+            </div>
+          </li>
+      </ol>
+      <p class="closing">I wanted essential information to stay on the unit itself.</p>
+    </section>
+
+    <!-- Band: What I'm proposing -->
+    <div class="band band--cream" id="proposing"><h2>What I’m proposing</h2></div>
+    <section class="body body--wide" aria-label="What I’m proposing">
+      <div style="max-width:840px">
+        <p class="status-label status-label--red">Proposed concept</p>
+        <p>The proposal: each unit carries its own name, strength and expiry, laid out so it still reads after the strip is cut. Below are six ways that could look.</p>
+        <p><strong>Read this first.</strong> These are early concept visualizations, not measured to a real strip. ZORVEX and Examplecetam are fictional, and the local-language wording is a placeholder that hasn’t been reviewed. None of these layouts is better than another yet; that’s what the <a href="#testing">prototype testing</a> is for. <span class="warn">FICTIONAL PRODUCT, NOT FOR MEDICAL USE.</span></p>
+      </div>
+      <div class="fig-grid">
+          <figure class="fig">
+            <h4>Layout A · Stacked identity</h4>
+            <img src="images/layers/layout-a.svg" width="960" height="470" loading="lazy"
+                 alt="Layout A, Stacked identity: three separated units of a fictional strip. Name, medicine and strength stacked at the top; expiry and batch at the bottom. Fictional product, not for medical use.">
+            <figcaption>Name, medicine and strength stacked at the top; expiry and batch at the bottom. <span class="warn">NOT FOR MEDICAL USE.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <h4>Layout B · Cavity-first, split expiry/batch</h4>
+            <img src="images/layers/layout-b.svg" width="960" height="470" loading="lazy"
+                 alt="Layout B, Cavity-first, split expiry/batch: three separated units of a fictional strip. Cavity at the top; expiry and batch in two labeled columns. Fictional product, not for medical use.">
+            <figcaption>Cavity at the top; expiry and batch in two labeled columns. <span class="warn">NOT FOR MEDICAL USE.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <h4>Layout C · Dark expiry band</h4>
+            <img src="images/layers/layout-c.svg" width="960" height="470" loading="lazy"
+                 alt="Layout C, Dark expiry band: three separated units of a fictional strip. Expiry printed light-on-dark in a band across the bottom. Fictional product, not for medical use.">
+            <figcaption>Expiry printed light-on-dark in a band across the bottom. <span class="warn">NOT FOR MEDICAL USE.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <h4>Layout D · Bilingual split, boxed strength</h4>
+            <img src="images/layers/layout-d.svg" width="960" height="470" loading="lazy"
+                 alt="Layout D, Bilingual split, boxed strength: three separated units of a fictional strip. A second-language name line and the strength in its own box. Fictional product, not for medical use.">
+            <figcaption>A second-language name line and the strength in its own box. <span class="warn">NOT FOR MEDICAL USE.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <h4>Layout E · Mirrored identity</h4>
+            <img src="images/layers/layout-e.svg" width="960" height="470" loading="lazy"
+                 alt="Layout E, Mirrored identity: three separated units of a fictional strip. Name and strength repeated upside down, so either end reads. Fictional product, not for medical use.">
+            <figcaption>Name and strength repeated upside down, so either end reads. <span class="warn">NOT FOR MEDICAL USE.</span></figcaption>
+          </figure>
+          <figure class="fig">
+            <h4>Layout F · Strength-first dark header</h4>
+            <img src="images/layers/layout-f.svg" width="960" height="470" loading="lazy"
+                 alt="Layout F, Strength-first dark header: three separated units of a fictional strip. The strength leads, in a dark header. Fictional product, not for medical use.">
+            <figcaption>The strength leads, in a dark header. <span class="warn">NOT FOR MEDICAL USE.</span></figcaption>
+          </figure>
+      </div>
+    </section>
+
+    <!-- 7b. Annotated photo: layouts -->
+    <section class="scrolly" id="proposal-viewer" data-layer-set="proposal" data-tabs-label="Layouts"
+             data-caption="Fictional product, not for medical use. Early concept, not measured to a real strip."
+             data-closing="Each unit carries the same essentials inside its own boundary. Whether that actually helps people is still untested."
+             aria-label="Step through the layout concepts">
+      <noscript><p>The six layouts are shown above as still images.</p></noscript>
+    </section>
+
+    <section class="body body--wide" aria-label="Requirements">
+      <div style="max-width:840px">
+        <div class="table-wrap">
+          <table class="req">
+            <caption>Six requirements from the research, and how the proposal responds</caption>
+            <thead><tr><th scope="col">Requirement</th><th scope="col">Proposed response</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Expiry</th><td>Consistent location, an explicit label, and separated from batch and manufacturing information.</td></tr>
+              <tr><th scope="row">Identification</th><td>A clear hierarchy of brand, medicine name and strength, repeated within every unit boundary.</td></tr>
+              <tr><th scope="row">Readability</th><td>A high-contrast, uncluttered print area printed directly on the foil. (A matte or opaque print area is a proposal only.)</td></tr>
+              <tr><th scope="row">Language</th><td>A bilingual name, in one language relevant to the participants.</td></tr>
+              <tr><th scope="row">Additional information</th><td>Excluded for this project: people want more information, but each unit has very little space.</td></tr>
+              <tr><th scope="row">Physical accessibility</th><td>Limited exploration of a pressable form. Blister structure and opening forces stay unchanged.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 id="fda-note">This part isn’t new</h3>
+        <p>Repeating information on individual blister cells is not new. FDA guidance already recommends keeping critical information on each individually labeled unit-dose blister (<a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/safety-considerations-container-labels-and-carton-labeling-design-minimize-medication-errors">Safety Considerations for Container Labels and Carton Labeling Design to Minimize Medication Errors, May 2022</a>). That guidance is not proof of compliance in another country.</p>
+        <p>The contribution here is the layout, readability and tradeoffs explored in this section.</p>
+      </div>
+    </section>
+
+    <!-- Outputs -->
+    <section class="body body--wide" aria-labelledby="made-h">
+      <div style="max-width:840px"><h3 id="made-h">What I made and why</h3></div>
+      <ul class="outputs">
+        <li>
+          <h4>Layered annotation board</h4>
+          <p>Shows where each piece of information sits on a real strip, one region at a time, so the reader sees the problem before any solution.</p>
+          <a href="#problem-viewer">See it in The challenge</a>
+        </li>
+        <li>
+          <h4>Six layouts</h4>
+          <p>Compare different ways to keep name, strength, expiry, and language inside every separated unit, so the choice comes from testing, not preference.</p>
+          <a href="#proposing">See the layouts</a>
+        </li>
+        <li>
+          <h4>Prototypes <span class="pill-status" id="out-proto-status">In progress</span></h4>
+          <p>Test the strongest layouts at actual size against a baseline copy of the reference layout.</p>
+          <a href="#testing">See the testing</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 9. Band (impact position): Testing -->
+    <div class="band band--yellow" id="testing"><h2>Testing the prototypes</h2></div>
+    <section class="body body--wide" aria-label="Testing the prototypes">
+      <div style="max-width:840px">
+        <p class="status-label" id="t-status">Testing planned</p>
+        <p id="t-status-text">Results will appear here once the sessions have run. Until then, this section describes the study design only.</p>
+
+        <h3>Study design</h3>
+        <ul class="design-facts">
+          <li><strong><span data-t="participants">6</span> participants</strong> will take part, plus <span data-t="pilot">one</span> pilot session that won’t be counted.</li>
+          <li><strong>Three designs</strong> will be compared: the original (a paper reproduction of the reference layout with the same fictional information) and two redesigns.</li>
+          <li><strong>Neutral design codes</strong> will be used with participants. They won’t be told which design is the original and which are redesigns.</li>
+          <li><strong>All six presentation orders</strong> will be used, so every design appears in every position twice.</li>
+          <li><strong>Three parallel content sets</strong> of equal difficulty will be paired with order position rather than design, to prevent memory carryover. That makes 9 prints in total (3 designs × 3 sets).</li>
+          <li>Every mock-up will be marked <span class="warn">NOT FOR MEDICAL USE</span>, with fictional names and dummy dates only; no real medicine.</li>
+        </ul>
+      </div>
+
+      <div style="max-width:840px">
+        <h4 class="sub-h">Four tasks per design</h4>
+        <ol class="plan" id="t-tasks">
+          <li>Identify the medicine and strength.</li>
+          <li>Find the expiry date and say whether it is still in date.</li>
+          <li>Pick the requested strength from two similar strips.</li>
+          <li>Identify two separated single units and match each to its strip.</li>
+        </ol>
+      </div>
+
+      <div id="t-results" class="t-results"></div>
+
+      <div style="max-width:840px">
+        <h4 class="sub-h">Limitations</h4>
+        <ul class="limits">
+          <li>This is an exploratory study, not a clinical safety validation.</li>
+          <li id="t-glare">Paper prototypes can’t reproduce foil reflection, so I make no claims about glare.</li>
+          <li>Results describe these prototypes, tasks and participants only.</li>
+          <li>Paper can’t establish sealing, protection, opening force, production suitability, or regulatory compliance.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 11. Two-column: impact + next steps / reflections -->
+    <section class="twocol" id="impact" aria-label="Impact, next steps and reflections">
+      <div>
+        <h3 class="twocol__h">Impact, honestly</h3>
+        <p>Nothing from this project has been adopted, and none of the designs has been tested in real use. What exists so far is research, six layout concepts and paper prototypes.</p>
+        <h3 class="twocol__h">Next steps</h3>
+        <ul>
+          <li>Finish the prototype sessions and record the raw counts above.</li>
+          <li>Revise the strongest layout based on what the sessions show, and document each change with its evidence.</li>
+          <li>Not covered by this round: foil-contrast treatments and opening-form alternatives.</li>
+        </ul>
+      </div>
+      <aside class="reflections" id="reflections" aria-labelledby="reflect-h" hidden>
+        <h3 class="twocol__h" id="reflect-h">Reflections</h3>
+        <dl id="reflect-list"></dl>
+      </aside>
+    </section>
+
+    <!-- Project details (role, status, timeline, method, participants, scope) -->
+    <section class="details" id="details" aria-labelledby="details-h">
+      <h2 id="details-h">Project details</h2>
+      <dl class="details__grid">
+        <div class="detail detail--1">
+          <dt>Role</dt>
+          <dd><ul class="meta__items"><li>Solo project<span>– I planned the study, ran the interviews, analyzed the results, designed the concepts, and ran the prototype testing.</span></li></ul></dd>
+        </div>
+        <div class="detail detail--2">
+          <dt>Status</dt>
+          <dd><ul class="meta__items"><li>Proposal and exploration<span>– not a finished or tested medical product</span></li></ul></dd>
+        </div>
+        <div class="detail detail--3">
+          <dt>Timeline</dt>
+          <dd><ul class="meta__items" id="meta-timeline">
+            <li>August–October 2026<span>– research</span></li>
+            <li>Start of November 2026<span>– prototype testing</span></li>
+          </ul></dd>
+        </div>
+        <div class="detail detail--4">
+          <dt>Method</dt>
+          <dd><ul class="meta__items">
+            <li>15 semi-structured interviews<span>– 30 to 60 minutes each</span></li>
+            <li>Analysis by one reviewer (me)</li>
+            <li>Layout concepts</li>
+            <li>Paper-prototype testing<span>– 6 participants plus one pilot</span></li>
+          </ul></dd>
+        </div>
+        <div class="detail detail--5">
+          <dt>Participants</dt>
+          <dd><ul class="meta__items"><li>15 interviewees<span>– 5 patients, 10 caregivers and helpers, recruited through one hospital in India</span></li></ul></dd>
+        </div>
+        <div class="detail detail--6">
+          <dt>Scope</dt>
+          <dd><ul class="meta__items"><li>Identification, expiry, readability and language on separated blister units</li></ul></dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- 12. Call to action -->
+    <section class="cta" aria-labelledby="cta-h">
+      <div class="cta__inner">
+        <h3 id="cta-h">Have thoughts on this?</h3>
+        <p>I’m looking for feedback on the layouts and the prototype testing, especially from people who handle medicine packaging or pharmacy labeling.</p>
+        <a class="button" href="mailto:sd1752@g.rit.edu">Get in touch</a>
+      </div>
+    </section>
+
+    <!-- 13. In this case study -->
+    <section class="more" aria-labelledby="more-h">
+      <h2 id="more-h">In this case study</h2>
+      <ul class="more__grid">
+        <li>
+          <div class="more__img more__img--band" aria-hidden="true">15</div>
+          <div class="more__text">
+            <h4><a href="#found">What came up in 15 interviews</a></h4>
+            <p>Six themes, one quote each, and the scope decisions that followed.</p>
+          </div>
+        </li>
+        <li>
+          <div class="more__img"><img src="images/layers/layout-c.svg" alt="" loading="lazy"></div>
+          <div class="more__text">
+            <h4><a href="#proposing">Six layout concepts</a></h4>
+            <p>Drawn on a fictional product, with a layer-by-layer view of each one.</p>
+          </div>
+        </li>
+        <li>
+          <div class="more__img more__img--band" aria-hidden="true">4</div>
+          <div class="more__text">
+            <h4><a href="#testing">How I’m testing the prototypes</a></h4>
+            <p>Four tasks, three designs, six participants, and what paper prototypes can’t tell us.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 14. Back to top -->
+    <div class="to-top">
+      <a href="#top"><svg viewBox="0 0 24 14" aria-hidden="true"><path d="M1 13 12 2l11 11" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>Top</a>
+    </div>
+  </main>
+
+  <!-- 15. Footer -->
+  <footer class="site-footer">
+    <div class="footer__top">
+      <p class="footer__name" data-site-name>Look Again</p>
+      <p>A student information-design exploration. It is a proposal, not a finished or tested medical product. Product names in the layout concepts (ZORVEX, Examplecetam) are fictional; mockups are not for medical use.</p>
+    </div>
+    <ul class="footer__links">
+          <li><a href="#glance">Overview</a></li>
+          <li><a href="#challenge">Challenge</a></li>
+          <li><a href="#found">Findings</a></li>
+          <li><a href="#considered">Ideas</a></li>
+          <li><a href="#proposing">Proposal</a></li>
+          <li><a href="#testing">Testing</a></li>
+          <li><a href="#impact">Impact</a></li>
+          <li><a href="#details">Project details</a></li>
+    </ul>
+    <!-- Optional credit line. Confirm the wording before enabling:
+    <p class="footer__small">Page layout adapted, with permission, from [reference case study].</p>
+    -->
+    <p class="footer__small">Typeface: DM Sans (SIL Open Font License).</p>
+  </footer>
+</body>
+</html>
